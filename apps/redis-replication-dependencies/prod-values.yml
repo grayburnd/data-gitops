@@ -1,0 +1,13 @@
+team: data
+environment: prod
+labels:
+  app: data
+  component: redis
+  env: prod
+  team: data
+aws:
+  accountId: "632988741882"
+  region: us-east-1
+redisExternalSecret:
+  name: redis-secret
+  storeRef: prod-clusterSecretStore_secrets_manager ##Secret Store Ref to use
