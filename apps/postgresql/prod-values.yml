@@ -1,0 +1,39 @@
+team: data
+environment: prod
+labels:
+  app: data
+  component: postgres
+  env: prod
+  team: data
+aws:
+  accountId: "AWS_ACCOUNT_ID_REDACTED"
+  region: us-east-1
+postgresql:
+  version: 15
+  replicas: 2
+  enableConnectionPooler: false
+  enableReplicaConnectionPooler: false
+  volume:
+    size: 20Gi
+    storageClass: ebs-gp3
+  users:
+    db_admin:
+      - superuser
+      - createdb
+  databases:
+    postgres: db_admin
+  resources:
+    requests:
+      cpu: 100m
+      memory: 100Mi
+    limits:
+      cpu: 500m
+      memory: 500Mi
+postgresPushSecret:
+  secretStore:
+    name: postgres-db-admin-credentials
+    storeRef: prod-clusterSecretStore_parameter_store ##Secret Store Ref to use
+  selector:
+    name: db-admin.backend.credentials
+  target:
+    name: db-admin-backend-credentials

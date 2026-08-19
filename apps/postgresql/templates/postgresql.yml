@@ -1,0 +1,21 @@
+kind: "postgresql"
+apiVersion: "acid.zalan.do/v1"
+
+metadata:
+  name: {{ .Chart.Name }}
+  namespace: {{ .Values.team }}-{{ .Values.environment }}
+  labels: {{ .Values.labels | toYamlPretty | nindent 4 }}
+
+spec:
+  teamId: {{ .Values.team }}
+{{- with .Values.postgresql }}
+  postgresql:
+    version: {{ .version }}
+  numberOfInstances: {{ .replicas }}
+  enableConnectionPooler: {{ .enableConnectionPooler }}
+  enableReplicaConnectionPooler: {{ .enableReplicaConnectionPooler }}
+  volume: {{ .volume | toYamlPretty | nindent 4 }}
+  users: {{ .users | toYamlPretty | nindent 4 }}
+  databases: {{ .databases | toYamlPretty | nindent 4 }}
+  resources: {{ .resources | toYamlPretty | nindent 4 }}
+{{- end }}
