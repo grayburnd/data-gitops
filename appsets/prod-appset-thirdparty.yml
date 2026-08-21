@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1 ##See if can take either helm 3rd party with own apps or just one of them. May need seperate appset.
 kind: ApplicationSet
 metadata:
-  name: appset
+  name: appset-third-party
   namespace: data-prod ##Only for Prod
 spec:
   goTemplate: true
@@ -33,7 +33,7 @@ spec:
           targetRevision: '{{ .thirdParty.targetRevision }}' ##Check
           helm:
             valueFiles:
-              - $values/'{{ trimSuffix "/prod-config.yml" .path.path }}'/{{ .env }}-values.yml
+              - $values/{{ trimSuffix "/prod-config.yml" .path.path }}/{{ .env }}-values.yml
         - repoURL: '{{ .repoURL }}'
           targetRevision: HEAD
           ref: values
