@@ -5,6 +5,8 @@ metadata:
   name: {{ .Chart.Name }}
   namespace: {{ .Values.team }}-{{ .Values.environment }}
   labels: {{ .Values.labels | toYamlPretty | nindent 4 }}
+  annotations:
+    argocd.argoproj.io/sync-wave: '0'
 
 spec:
   teamId: {{ .Values.team }}
