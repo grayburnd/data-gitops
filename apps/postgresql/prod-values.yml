@@ -31,9 +31,5 @@ postgresql:
       memory: 500Mi
 postgresPushSecret:
   secretStore:
-    name: postgres-db-admin-credentials
+    name: db-admin.postgres.credentials
     storeRef: prod-cluster-secret-store-parameter-store ##Secret Store Ref to use
-  selector:
-    name: db-admin.backend.credentials
-  target:
-    name: db-admin-backend-credentials
