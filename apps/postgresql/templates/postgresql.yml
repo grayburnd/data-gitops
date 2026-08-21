@@ -10,7 +10,7 @@ spec:
   teamId: {{ .Values.team }}
 {{- with .Values.postgresql }}
   postgresql:
-    version: {{ .version | toString }}
+    version: "{{ .version }}"
   numberOfInstances: {{ .replicas }}
   enableConnectionPooler: {{ .enableConnectionPooler }}
   enableReplicaConnectionPooler: {{ .enableReplicaConnectionPooler }}
