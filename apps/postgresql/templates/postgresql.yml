@@ -10,9 +10,9 @@ spec:
   teamId: {{ .Values.team }}
 {{- with .Values.postgresql }}
   postgresql:
-    version: {{ .version }}
+    version: {{ .version | toString }}
   numberOfInstances: {{ .replicas }}
-  enableConnectionPooler: "{{ .enableConnectionPooler }}"
+  enableConnectionPooler: {{ .enableConnectionPooler }}
   enableReplicaConnectionPooler: {{ .enableReplicaConnectionPooler }}
   volume: {{ .volume | toYamlPretty | nindent 4 }}
   users: {{ .users | toYamlPretty | nindent 4 }}
