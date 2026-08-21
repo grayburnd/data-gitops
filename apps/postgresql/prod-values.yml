@@ -32,7 +32,7 @@ postgresql:
 postgresPushSecret:
   secretStore:
     name: postgres-db-admin-credentials
-    storeRef: prod-clusterSecretStore_parameter_store ##Secret Store Ref to use
+    storeRef: prod-cluster-secret-store-parameter-store ##Secret Store Ref to use
   selector:
     name: db-admin.backend.credentials
   target:
