@@ -10,4 +10,4 @@ aws:
   region: us-east-1
 redisExternalSecret:
   name: redis-secret
-  storeRef: prod-clusterSecretStore_secrets_manager ##Secret Store Ref to use
+  storeRef: prod-cluster-secret-store-secrets-manager ##Secret Store Ref to use
