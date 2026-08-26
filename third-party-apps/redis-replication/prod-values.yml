@@ -153,15 +153,15 @@ podSecurityContext:
 
 securityContext: {}
 
-affinity: {}
-  # nodeAffinity:
-  #   requiredDuringSchedulingIgnoredDuringExecution:
-  #     nodeSelectorTerms:
-  #     - matchExpressions:
-  #       - key: disktype
-  #         operator: In
-  #         values:
-  #         - ssd
+affinity:
+  nodeAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: team
+          operator: In
+          values:
+            - data
 
 tolerations: []
   # - key: "key"
