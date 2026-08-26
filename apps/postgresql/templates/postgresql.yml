@@ -10,6 +10,14 @@ metadata:
 
 spec:
   teamId: {{ .Values.team }}
+  nodeAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: team
+          operator: In
+          values:
+            - {{ .Values.team }}
 {{- with .Values.postgresql }}
   postgresql:
     version: "{{ .version }}"
