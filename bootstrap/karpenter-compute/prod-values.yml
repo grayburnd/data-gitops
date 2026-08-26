@@ -1,10 +1,10 @@
 team: data
 subnet:
-  ids: ["subnet-09fa4a0a8f233a923", "subnet-09fa4a0a8f233a924"] ##Change
+  ids: ["subnet-03dc545dfd720dfe4", "subnet-0cc170fda34378959"] ##Change
 securityGroup:
-  ids: ["sg-063d7acfb4b06c82c", "sg-063d7acfb4b06c82b"] ##Change
+  ids: ["sg-087f98ed7c52514b4"] ##Change
 iamRoleName:
-  node: NodeIAMRole ##Change
+  node: KarpenterNodeRole-main-eks-cluster ##Change
 ami:
   aliasName: bottlerocket
   pinnedVersion: v1.64.0
