@@ -23,5 +23,5 @@ disruption:
   consolidateAfter: 10m #1m | Never
   percentageNodeDisruption: 20
 limits:
-  cpu: 10 ##Number of vCPU's
-  memory: 18 ##Auto appends Gi on the end
+  cpu: 20 ##Number of vCPU's
+  memory: 80 ##Auto appends Gi on the end
