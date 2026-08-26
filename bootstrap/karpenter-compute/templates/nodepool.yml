@@ -69,9 +69,9 @@ spec:
           values: {{ . | toJson }}
           minValues: {{ . | len }}
         {{- end }}
-        - key: "karpenter.k8s.aws/instance-cpu"
-          operator: In
-          values: {{ .cpus | toJson }}
+        # - key: "karpenter.k8s.aws/instance-cpu"
+        #   operator: In
+        #   values: {{ .cpus | toJson }}
         - key: "karpenter.k8s.aws/instance-hypervisor"
           operator: In
           values: ["nitro"]
