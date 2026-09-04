@@ -203,7 +203,7 @@ env: []
 pdb:
   enabled: true
   minAvailable: 3
-  maxUnavailable: null
+  maxUnavailable: 0
 
 # -- Sentinel configuration for automatic failover.
 # When enabled, the operator creates a Sentinel StatefulSet alongside the replication pods.
