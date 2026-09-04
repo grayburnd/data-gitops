@@ -49,7 +49,7 @@ redisReplication:
 
 labels:
   env: prod
-  app: redis-cluster
+  app: redis
 annotations: {}
 #   annotation-key: "annotation-value"
 #   prometheus.io/scrape: "true"
