@@ -81,14 +81,14 @@ serviceMonitor:
     # team: devops
 
 redisExporter:
-  enabled: false
+  enabled: true
   image: quay.io/opstree/redis-exporter
   tag: "v1.44.0"
   imagePullPolicy: IfNotPresent
-  resources: {}
-    # requests:
-    #   cpu: 100m
-    #   memory: 128Mi
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
     # limits:
     #   cpu: 100m
     #   memory: 128Mi
