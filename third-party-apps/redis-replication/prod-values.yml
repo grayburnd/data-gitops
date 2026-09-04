@@ -70,7 +70,7 @@ externalService:
   #nodePort: 31000
 
 serviceMonitor:
-  enabled: false
+  enabled: true
   interval: 30s
   scrapeTimeout: 10s
   # -- Namespace where servicemonitor resource will be created, if empty it will be created in the same namespace as the redis-replication
