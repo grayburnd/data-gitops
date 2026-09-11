@@ -6,7 +6,7 @@ labels:
   env: prod
   team: data
 aws:
-  accountId: "AWS_ACCOUNT_ID_REDACTED"
+  accountId: "123456789123"
   region: us-east-1
 redisExternalSecret:
   name: redis-secret
